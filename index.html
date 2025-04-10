@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+        body{
             display: grid;
             place-items: center;
-            min-height: 100vh;
+            height: 100vh;
+            background-color: #EF6024;    
         }
-
-        .contador {
+        .contador{
+            background-color: #F0941F;
             text-align: center;
-            background-color: aquamarine;
             padding: 20px;
-            border-radius: 5px;
+            color:#363432
         }
 
-        p {
-            font-size: 50px;
+        p{
+            font-size: 70px;
+            color: #363432;
+        }
+        button{
+            background-color: #90A19D;
         }
     </style>
 </head>
-
 <body>
-    <div class="contador">
+    <div class="contador" >
         <h1>Contador</h1>
         <p></p>
-        <button onclick="menos()">menos</button>
-        <button onclick="mais()">mais</button>
+        <button onclick="menos()" >menos</button>
+        <button onclick="mais()" >mais</button>
     </div>
 
     <script>
-        let numero = 0
+        let numero = 0;
         tela()
-        function mais() {
+        
+
+        function mais(){
             numero++
-            tela()
-            cor()
-
+           tela()
+           cor()
         }
-
-        function menos() {
+        function menos(){
             numero--
             tela()
             cor()
-
         }
 
-        function tela() {
-            const abc = document.querySelector('p')
-            abc.innerText = numero
+        function tela(){
+            const a = document.querySelector('p')
+            a.innerText = numero
 
         }
 
         function cor(){
             if(numero < 0){
-                abc = document.querySelector('p')
-                abc.style.color = 'red';
-
+                a =document.querySelector('p')
+                a.style.color = 'red';
             } else if(numero > 0){
-                abc = document.querySelector('p')
-                abc.style.color = 'green';
+                a =document.querySelector('p')
+                a.style.color = 'green';
             } else if(numero == 0){
-                abc = document.querySelector('p')
-                abc.style.color = 'black';
+                a =document.querySelector('p')
+                a.style.color = 'black';
             }
+
         }
-        
+
+
+
 
     </script>
 </body>
-
 </html>
