@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        .contador {
+            text-align: center;
+            background-color: aquamarine;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contador">
+        <h1>Contador</h1>
+        <p></p>
+        <button onclick="menos()">menos</button>
+        <button onclick="mais()">mais</button>
+    </div>
+
+    <script>
+        let numero = 0
+        tela()
+        function mais() {
+            numero++
+            tela()
+            cor()
+
+        }
+
+        function menos() {
+            numero--
+            tela()
+            cor()
+
+        }
+
+        function tela() {
+            const abc = document.querySelector('p')
+            abc.innerText = numero
+
+        }
+
+        function cor(){
+            if(numero < 0){
+                abc = document.querySelector('p')
+                abc.style.color = 'red';
+
+            } else if(numero > 0){
+                abc = document.querySelector('p')
+                abc.style.color = 'green';
+            } else if(numero == 0){
+                abc = document.querySelector('p')
+                abc.style.color = 'black';
+            }
+        }
+        
+
+    </script>
+</body>
+
+</html>
