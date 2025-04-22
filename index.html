@@ -3,77 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contador</title>
     <style>
         body{
             display: grid;
             place-items: center;
-            height: 100vh;
-            background-color: #EF6024;    
+            min-height: 100vh;
         }
-        .contador{
-            background-color: #F0941F;
+        div{
             text-align: center;
-            padding: 20px;
-            color:#363432
+            background-color: aqua;
+            padding: 30px;
         }
-
         p{
-            font-size: 70px;
-            color: #363432;
-        }
-        button{
-            background-color: #90A19D;
+            font-size: 60px;
         }
     </style>
 </head>
 <body>
-    <div class="contador" >
-        <h1>Contador</h1>
-        <p></p>
-        <button onclick="menos()" >menos</button>
-        <button onclick="mais()" >mais</button>
-    </div>
+   <div>
+    <h1>Contador</h1>
+    <p></p>
+    <button onclick="menos()" >menos</button>
+    <button onclick="mais()" >mais</button>
+   </div> 
 
-    <script>
-        let numero = 0;
+   <script>
+    let numero = 0
+    tela()
+    
+    function mais(){
+        numero++ 
         tela()
-        
+        cor()    
+    }
+    function menos(){
+        numero--
+        tela()
+        cor()
+    }
+    
+    function tela(){
+        const a = document.querySelector('p')
+        a.innerText = numero
 
-        function mais(){
-            numero++
-           tela()
-           cor()
+    }
+
+    
+
+    function cor(){
+        if(numero < 0){
+            const p = document.querySelector('p')
+             p.style.color = 'red'
+        }else if(numero > 0){
+            const p = document.querySelector('p')
+             p.style.color = 'green'
+        }else{
+            const p = document.querySelector('p')
+             p.style.color = 'black'
         }
-        function menos(){
-            numero--
-            tela()
-            cor()
-        }
-
-        function tela(){
-            const a = document.querySelector('p')
-            a.innerText = numero
-
-        }
-
-        function cor(){
-            if(numero < 0){
-                a =document.querySelector('p')
-                a.style.color = 'red';
-            } else if(numero > 0){
-                a =document.querySelector('p')
-                a.style.color = 'green';
-            } else if(numero == 0){
-                a =document.querySelector('p')
-                a.style.color = 'black';
-            }
-
-        }
-
-
-
-
-    </script>
+    }
+   </script>
 </body>
 </html>
